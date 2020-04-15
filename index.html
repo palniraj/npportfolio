@@ -414,7 +414,7 @@
         <div class="container py-5">
           <h3>Get In Touch</h3>
           <p>After we get some information from you, we’ll set up a time to discuss your project in further detail.</p>
-          <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" id="my-form" data-netlify="true"><input type="hidden" name="form-name" value="contact">
             <div class="form-group">
               <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
@@ -513,6 +513,14 @@
       $('.collapse').collapse('hide');
     });
 
+    $("#my-form").submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    alert("Thank you!");
+  });
+});
 
   </script>
 </body>
