@@ -412,8 +412,7 @@
           <div class="container py-5">
             <h3>Get In Touch</h3>
             <p>After I get some information from you, i’ll set up a time to discuss your project in further detail.</p>
-            <form name="contact" method="POST" id="my-form" data-netlify="true"><input type="hidden" name="form-name"
-                value="contact">
+            <form name="contact" method="POST" data-netlify="true">
               <div class="form-group">
                 <div class="input-group input-group-lg">
                   <div class="input-group-prepend">
@@ -445,6 +444,9 @@
                   </div>
                   <textarea class="form-control bg-dark text-white" placeholder="Message With Subject"></textarea>
                 </div>
+              </div>
+              <div class="field">
+                <div data-netlify-recaptcha="true"></div>
               </div>
 
               <input type="submit" value="Submit" class="btn btn-danger btn-block btn-lg">
@@ -510,17 +512,6 @@
       $('.port-item').click(function () {
         $('.collapse').collapse('hide');
       });
-
-      $("#my-form").submit(function (e) {
-        e.preventDefault();
-
-        var $form = $(this);
-        $.post($form.attr("action"), $form.serialize()).then(function () {
-          alert("Thank you!");
-        });
-      });
-
-
 
     });
 
