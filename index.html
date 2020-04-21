@@ -506,24 +506,24 @@
     crossorigin="anonymous"></script>
 
   <script>
-    $(document).ready(function(){
-     $('.port-item').click(function () {
-      $('.collapse').collapse('hide');
-    });
-
-    $("#my-form").submit(function (e) {
-      e.preventDefault();
-
-      var $form = $(this);
-      $.post($form.attr("action"), $form.serialize()).then(function () {
-        alert("Thank you!");
+    $(document).ready(function () {
+      $('.port-item').click(function () {
+        $('.collapse').collapse('hide');
       });
+
+      $("#my-form").submit(function (e) {
+        e.preventDefault();
+
+        var $form = $(this);
+        $.post($form.attr("action"), $form.serialize()).then(function () {
+          alert("Thank you!");
+        });
+      });
+
+
+
     });
 
-    
-    
-    });
-   
   </script>
 </body>
 
